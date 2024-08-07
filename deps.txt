@@ -1,0 +1,6 @@
+go install github.com/jackc/tern/v2@latest
+tern init ./internal/store/pgstore/migrations
+tern new --migrations ./internal/store/pgstore/migrations
+
+go install github.com/sqlc-dev/sqlc/cmd/sqlc@latest
+sqlc generate -f ./internal/store/pgstore/sqlc.yaml
